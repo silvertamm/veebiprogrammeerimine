@@ -8,6 +8,7 @@
 		header("Location: main.php");
 		exit();
 	}
+	
 	$signupFirstName = "";
 	$signupFamilyName = "";
 	$gender = "";
@@ -27,6 +28,8 @@
 	$signupPasswordError = "";
 	
 	$loginEmailError ="";
+	
+	$lastIdea = "hetkel häid mõtteid pole!";
 	
 	if(isset($_POST["loginButton"])){
 		//kas on kasutajanimi sisestatud
@@ -185,6 +188,9 @@
 	}
 	$signupYearSelectHTML.= "</select> \n";
 	
+	//värskeim mõte
+	$lastIdea = readLastIdea();
+	
 ?>
 <!DOCTYPE html>
 <html lang="et">
@@ -193,7 +199,9 @@
 	<title>Sisselogimine või uue kasutaja loomine</title>
 </head>
 <body>
-	<h1>Logi sisse!</h1>
+	<h1>Heade mõtete veeb</h2>
+	<p>Värskeim hea mõte on: <span><?php echo $lastIdea; ?></span></p>
+	<h2>Logi sisse!</h2>
 	<p>Siin harjutame sisselogimise funktsionaalsust.</p>
 	
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -205,7 +213,7 @@
 		<input name="loginButton" type="submit" value="Logi sisse"><span><?php echo $notice; ?></span>
 	</form>
 	
-	<h1>Loo kasutaja</h1>
+	<h2>Loo kasutaja</h2>
 	<p>Kui pole veel kasutajat....</p>
 	
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">

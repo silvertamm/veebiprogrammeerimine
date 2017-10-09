@@ -28,6 +28,8 @@
 	$fileCount = count($picFiles);
 	$picNumber = mt_rand(0, ($fileCount - 1));
 	$picFile = $picFiles[$picNumber];
+	
+	$showSignedInName = showName();
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +41,11 @@
 	</title>
 </head>
 <body>
-	
+	<h1>Tere! <span><?php echo $showSignedInName; ?></span></h1> 
 	<p>Siin veebilehel pole teil midagi teha, kuna see veebileht on loodud õppetöö jaoks.</p>
 	<p><a href="?logout=1">Logi välja</a></p>
 	<p><a href="usersInfo.php">Info kasutajate kohta</a></p>
+	<p><a href="userIdeas.php">Head mõtted</a></p>
 	<h2>Pilt ülikoolist</h2>
 	<img src="<?php echo $picsDir .$picFile; ?>" alt="Tallinna ülikool">
 	
