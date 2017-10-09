@@ -11,7 +11,7 @@
 <body>
 	<p>Siin veebilehel pole teil midagi teha, kuna see veebileht on loodud õppetöö jaoks</p>
 	<h2>Pilt ülikoolist</h2>
-	<img src=../../pics/tlu3.jpg" alt="Tallinna Ülikool">
+	<img src=".../.../pics/tlu3.jpg" alt="Tallinna Ülikool">
 	
 
 
